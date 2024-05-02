@@ -1,7 +1,6 @@
 <template>
   <div>
     <Hero :heading="heading"/>
-    <Dashboard />
   </div>
 </template>
 
