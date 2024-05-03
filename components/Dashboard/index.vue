@@ -2,8 +2,8 @@
     <div class="lTableCon">
     <div class="lTableGrid">
       <div class="lTableGridItem">
-        <h2 class="underline">Position</h2>
-        <div v-if="jsonData">
+        <h2 class="underline" id="tableTitles">Position</h2>
+        <div v-if=!pending>
           <div v-for="(item, index) in jsonData" :key="item.id">
               <h2>{{ index + 1 }}</h2>
           </div>
@@ -11,8 +11,8 @@
         <div v-else>Loading...</div>
       </div>
       <div class="lTableGridItem clubColumn">
-        <h2 class="underline">Book Club</h2>
-        <div v-if="jsonData">
+        <h2 class="underline" id="tableTitles">Book Club</h2>
+        <div v-if=!pending>
           <div v-for="name in jsonData" :key="name.id">
               <h2>{{ name.title }}</h2>
           </div>
@@ -20,36 +20,29 @@
         <div v-else>Loading...</div>
       </div>
       <div class="lTableGridItem">
-        <h2 class="underline">Created in</h2>
+        <h2 class="underline" id="tableTitles">Created in</h2>
       </div>
       <div class="lTableGridItem">
-        <h2 class="underline">Members</h2>
+        <h2 class="underline" id="tableTitles">Members</h2>
       </div>
       <div class="lTableGridItem">
-        <h2 class="underline">Books read</h2>
+        <h2 class="underline" id="tableTitles">Books read</h2>
       </div>
     </div>
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-
-const jsonData = ref(null);
-
-const fetchData = async () => {
+import { useLazyAsyncData } from 'nuxt/app';
+const { data: jsonData, pending} = useLazyAsyncData(async () => {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/todos/');
         const data = await res.json();
-        jsonData.value = data;
+        return data;
     } catch (error) {
         console.error(error);
     }
-};
-
-onMounted(() => {
-    fetchData();
-});
+})
 </script>
 
 <style scope>
@@ -57,6 +50,14 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#tableTitles {
+  background: var(--bgColor);
+  font-size: 2.25rem;
+  color: var(--mainTextColor);
+  font-family: var(--mainFont);
+  text-shadow: 2px 2px 0px var(--secondTextColor);
 }
 
 .lTableGrid {
@@ -67,6 +68,7 @@ onMounted(() => {
     color: black;
     height: 500px;
     width: 1200px;
+    border-radius: 20px;
     overflow-y: scroll;
     text-align: center;
 }
