@@ -36,11 +36,10 @@ const turnFull = () => {
 .navbarFull li {
     color: var(--mainTextColor);
     list-style: none;
-    font-size: 2.5rem;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
     margin-left: 2rem;
     animation: fadeIn 0.5s cubic-bezier(0.9, 0.82, 0.165, 1) 0s 1;
 }
-
 .navbarCon {
     display: flex;
     position: absolute;

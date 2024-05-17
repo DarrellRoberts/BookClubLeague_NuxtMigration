@@ -20,8 +20,9 @@ body {
 
 h1 {
     font-family: var(--mainFont);
-    text-shadow: 10px 0px 0px var(--secondTextColor);
+    text-shadow: clamp(5px, 0.5vw, 10px) 0px 0px var(--secondTextColor);
     color: var(--mainTextColor);
     letter-spacing: 0.5rem;
-    font-size: 7rem;
+    font-size: clamp(2.5rem, 5vw, 7rem);
+    padding-top: 2rem
 }
