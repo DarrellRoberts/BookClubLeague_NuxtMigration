@@ -11,8 +11,12 @@ defineProps({
 </script>
 
 <style>
-.heroCon {
+  .heroCon {
     display: flex;
     justify-content: center;
+    padding-top: 2rem;
+    padding: 2rem 0px 0px 2rem;
 }
+
+
 </style>

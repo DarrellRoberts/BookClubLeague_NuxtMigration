@@ -53,11 +53,8 @@ const { data: jsonData, pending} = useLazyAsyncData(async () => {
 }
 
 #tableTitles {
-  background: var(--bgColor);
-  font-size: 2.25rem;
-  color: var(--mainTextColor);
+  font-size: clamp(1rem, 2vw, 2.25rem);
   font-family: var(--mainFont);
-  text-shadow: 2px 2px 0px var(--secondTextColor);
 }
 
 .lTableGrid {
