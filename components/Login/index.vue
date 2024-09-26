@@ -6,9 +6,6 @@
 
 <style scoped>
 .loginCon {
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-end; */
   right: 0;
   margin: 1rem;
   position: absolute;
