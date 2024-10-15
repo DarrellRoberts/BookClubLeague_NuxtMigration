@@ -1,8 +1,23 @@
+<!-- eslint-disable vue/v-on-event-hyphenation -->
+<!-- eslint-disable vue/attribute-hyphenation -->
 <template>
   <div class="loginCon">
-    <button type="button">Login</button>
+    <button @click="handleModal" type="button">Login</button>
+  </div>
+  <div v-if="loginOpen">
+    <LoginModal :loginOpen="loginOpen" @handleModal="handleModal" />
   </div>
 </template>
+
+<script setup lang="ts">
+import {type Ref, ref} from 'vue';
+import LoginModal from './modal/LoginModal.vue';
+
+const loginOpen: Ref<boolean> = ref(false);
+
+const handleModal = (): boolean => loginOpen.value = !loginOpen.value;
+
+</script>
 
 <style scoped>
 .loginCon {
