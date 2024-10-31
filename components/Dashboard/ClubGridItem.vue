@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import ClubData from './leaguedata/ClubData.vue';
-import formatDate from '../../functions/formatDate';
+import {formatDate} from '@/functions/date-functions/formatDate';
 
 type Data = {
   name: string,
