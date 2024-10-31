@@ -1,39 +1,28 @@
 <template>
-  <div class="modal">
-    <div  class="modalX" @click="emit('handleModal')">X</div>
-  </div>
+  <v-dialog max-width="500">
+    <template v-slot:activator="{ props: activatorProps }">
+      <v-btn
+        v-bind="activatorProps"
+        color="black"
+        text="Login"
+        variant="flat"
+      ></v-btn>
+    </template>
+
+    <template v-slot:default="{ isActive }">
+      <v-card
+      title="Dialog"
+      color="black">
+        <v-card-text>
+          Login Form
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn text="Close Dialog" @click="isActive.value = false"></v-btn>
+        </v-card-actions>
+      </v-card>
+    </template>
+  </v-dialog>
 </template>
-
-<script setup lang="ts">
-defineProps<{
-  loginOpen: boolean;
-}>();
-
-const emit = defineEmits(['handleModal']);
-
-</script>
-
-<style scope>
-.modal {
-  display: flex;
-  justify-content: end;
-  position: fixed;
-  background-color: #000000;
-  height: 50vh;
-  width: 50vw;
-  right: 25%;
-  top: 25%;
-  border-radius: 30px;
-  z-index: 1000;
-  border-color: red;
-  border-width: 5px;
-  border-style: solid;
-}
-
-.modalX {
-  color: white;
-  font-size: 2rem;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-</style>

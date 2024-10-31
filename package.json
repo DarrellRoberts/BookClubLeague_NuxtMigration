@@ -11,6 +11,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "@nuxt/eslint": "^0.3.9",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
@@ -28,6 +29,8 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.3"
+    "vite-plugin-vuetify": "^2.0.4",
+    "vitest": "^1.5.3",
+    "vuetify": "^3.7.3"
   }
 }

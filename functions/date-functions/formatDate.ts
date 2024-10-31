@@ -1,4 +1,4 @@
-const formatDate = (dateString: string): string => {
+export const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
     const formatter = new Intl.DateTimeFormat('en-EN', {
         day: '2-digit',
@@ -9,5 +9,3 @@ const formatDate = (dateString: string): string => {
     const formattedDate = formatter.format(date);
     return formattedDate;
 };
-
-export default formatDate;
