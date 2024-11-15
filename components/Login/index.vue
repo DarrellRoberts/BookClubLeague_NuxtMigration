@@ -1,15 +1,14 @@
 <!-- eslint-disable vue/v-on-event-hyphenation -->
 <!-- eslint-disable vue/attribute-hyphenation -->
+<script setup lang="ts">
+import LoginModal from "./modal/LoginModal.vue";
+</script>
+
 <template>
   <div class="loginCon">
-    <LoginModal  />
+    <LoginModal />
   </div>
 </template>
-
-<script setup lang="ts">
-import LoginModal from './modal/LoginModal.vue';
-
-</script>
 
 <style scoped>
 .loginCon {

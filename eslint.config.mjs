@@ -7,7 +7,7 @@ export default withNuxt(
     files: ["**/*.ts", "**/*.tsx", "**/*.vue"],
     rules: {
       eqeqeq: ["error", "always"],
-      quotes: ["error", "single"],
+      quotes: ["error", "double"],
       "eol-last": ["error", "always"],
       indent: 2,
       "no-extra-semi": "error",
@@ -22,7 +22,7 @@ export default withNuxt(
       "quote-props": ["error", "as-needed"],
       "keyword-spacing": ["error", { before: true, after: true }],
       "key-spacing": ["error", { mode: "strict" }],
-      // 'html/indent': ['error', 2]
+      'html/indent': ['error', 2]
     },
   }
 );
