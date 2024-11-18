@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import "../style.css";
-import AuthContext from "~/context/AuthContext.vue";
+import { useAuth } from "~/composables/useAuth";
+
+const { token } = useAuth();
 </script>
 
 <template>
-  <AuthContext>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-  </AuthContext>
+  <!-- <AuthContext> -->
+  <Login :token="token" />
+  <Navbar />
+  <main>
+    <slot />
+  </main>
+  <!-- </AuthContext> -->
 </template>

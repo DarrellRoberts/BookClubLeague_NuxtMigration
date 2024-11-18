@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import LoginForm from "./LoginForm.vue";
-import { inject, watch } from "vue";
-import { type Ref } from "vue";
+import { useAuth } from "~/composables/useAuth";
 
-const token = inject<Ref<string | null>>("token");
-const logout = inject<() => void>("logout");
+const { logout, token } = useAuth();
 </script>
 
 <template>
