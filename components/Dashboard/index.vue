@@ -1,29 +1,22 @@
+<script setup>
+import ClubGridItem from "./ClubGridItem.vue";
+import { useClubFetch } from "~/composables/useClubFetch";
+
+const { fetchedData, loading } = useClubFetch(
+  "https://bookclubleague-backend.onrender.com/clubs"
+);
+</script>
+
 <template>
   <div class="lTableCon">
     <div class="lTableGrid">
-      <ClubGridItem v-if="!pending" :leagueData="leagueData" />
+      <ClubGridItem v-if="!loading" :leagueData="fetchedData" />
       <div class="loadingText" v-else>
         <h2>Loading...</h2>
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import ClubGridItem from './ClubGridItem.vue';
-
-const { data: leagueData, pending } = useLazyAsyncData(async () => {
-    try {
-        const res = await fetch(
-            'https://bookclubleague-backend.onrender.com/clubs'
-        );
-        const data = await res.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-    }
-});
-</script>
 
 <style scope>
 .lTableCon {
