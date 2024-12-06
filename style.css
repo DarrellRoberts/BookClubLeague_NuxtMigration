@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Bebas Neue Regular";
-    src: url("/BebasNeue-Regular.ttf");
+  font-family: "Bebas Neue Regular";
+  src: url("./public/BebasNeue-Regular.ttf");
 }
 
 :root {
-    --mainFont: "Bebas Neue Regular";
-    --mainTextColor: white;
-    --secondTextColor: black;
-    --bgColor: red;
+  --mainFont: "Bebas Neue Regular";
+  --mainTextColor: white;
+  --secondTextColor: black;
+  --bgColor: red;
 }
 
 body {
-    background-color: var(--bgColor);
+  background-color: var(--bgColor);
 }
 
 h1 {
-    font-family: var(--mainFont);
-    text-shadow: clamp(5px, 0.5vw, 10px) 0px 0px var(--secondTextColor);
-    color: var(--mainTextColor);
-    letter-spacing: 0.5rem;
-    font-size: clamp(2.5rem, 5vw, 7rem);
-    padding-top: 2rem
+  font-family: var(--mainFont);
+  text-shadow: clamp(5px, 0.5vw, 10px) 0px 0px var(--secondTextColor);
+  color: var(--mainTextColor);
+  letter-spacing: 0.5rem;
+  font-size: clamp(2.5rem, 5vw, 7rem);
+  padding-top: 2rem;
 }
