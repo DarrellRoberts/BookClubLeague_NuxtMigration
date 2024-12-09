@@ -1,16 +1,14 @@
 <script setup>
 import ClubGridItem from "./ClubGridItem.vue";
-import { useClubFetch } from "@/composables/useClubFetch";
+import { useClubStore } from "~/store/clubs";
 
-const { fetchedData, loading } = useClubFetch(
-  "https://bookclubleague-backend.onrender.com/clubs"
-);
+const store = useClubStore();
 </script>
 
 <template>
   <div class="lTableCon">
     <div class="lTableGrid">
-      <ClubGridItem v-if="!loading" :leagueData="fetchedData" />
+      <ClubGridItem v-if="!store.loading" :leagueData="store.clubs" />
       <div class="loadingText" v-else>
         <h2>Loading...</h2>
       </div>

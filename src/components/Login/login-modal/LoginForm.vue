@@ -2,17 +2,24 @@
 import { type Ref } from "vue";
 import { useLogin } from "@/composables/useLogin";
 
-defineProps<{
+const props = defineProps<{
   isActive: Ref<boolean>;
 }>();
 
-const { username, password, handleLogin } = useLogin();
+const { username, password, handleLogin, error } = useLogin();
+
+const handleButton = () => {
+  if (!error) {
+    props.isActive.value = false;
+  }
+};
 </script>
 
 <template>
   <form @submit.prevent="handleLogin">
     <input v-model="username" type="text" placeholder="Enter username" />
     <input v-model="password" type="password" placeholder="Enter password" />
-    <button @click="isActive.value = false" type="submit">Submit</button>
+    <button @click="handleButton" type="submit">Submit</button>
+    <span v-if="error">{{ error }}</span>
   </form>
 </template>
