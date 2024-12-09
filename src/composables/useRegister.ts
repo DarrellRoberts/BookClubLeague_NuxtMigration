@@ -1,7 +1,7 @@
 import { ref, type Ref } from "vue";
 import { useAuth } from "./useAuth";
 
-export const useLogin = () => {
+export const useRegister = () => {
   const username: Ref<string> = ref("");
   const password: Ref<string> = ref("");
   const loading: Ref<boolean> = ref(false);
@@ -11,7 +11,7 @@ export const useLogin = () => {
   const handleLogin = async (): Promise<void> => {
     try {
       const response = await fetch(
-        "https://bookclubleague-backend.onrender.com/users/login",
+        "https://bookclubleague-backend.onrender.com/users/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -24,12 +24,12 @@ export const useLogin = () => {
       const data = await response.json();
       if (response.ok) {
         loading.value = false;
-        console.log("Login successful");
+        console.log("Registration successful");
         login(data.token);
       }
       if (!response.ok) {
         loading.value = false;
-        console.log("Login unsuccessful");
+        console.log("Registration unsuccessful");
         error.value = data.error;
       }
     } catch (err: unknown) {
