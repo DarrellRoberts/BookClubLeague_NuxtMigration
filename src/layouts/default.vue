@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import "../../style.css";
-</script>
-
 <template>
   <Login />
   <Navbar />
@@ -9,3 +5,7 @@ import "../../style.css";
     <slot />
   </main>
 </template>
+
+<style>
+@import "../assets/stylesheets/main.css";
+</style>
