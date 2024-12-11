@@ -57,14 +57,6 @@ defineProps<{
   </div>
 </template>
 
-<style scope>
-#tableTitles {
-  font-size: clamp(1rem, 2vw, 2.25rem);
-  font-family: var(--mainFont);
-}
-
-.lTableGridItem {
-  display: flex;
-  flex-direction: column;
-}
+<style scoped>
+@import "../../assets/stylesheets/components/dashboard/club-grid-item.css";
 </style>

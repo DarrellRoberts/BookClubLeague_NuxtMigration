@@ -8,7 +8,6 @@ store.changeHeading("About");
 
 <template>
   <Hero :heading="store.heading" />
-  <!-- eslint-disable-next-line vue/no-multiple-template-root -->
   <article>
     <p>
       The Book Club League is a place for book clubs all across the world to
@@ -25,18 +24,6 @@ store.changeHeading("About");
   </article>
 </template>
 
-<style>
-article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-article p {
-  font-size: clamp(2rem, 3vw, 3rem);
-  text-align: center;
-  color: black;
-  width: 75%;
-  font-family: var(--mainFont);
-  font-weight: 600;
-}
+<style scoped>
+@import "../../assets/stylesheets/about/about.css";
 </style>

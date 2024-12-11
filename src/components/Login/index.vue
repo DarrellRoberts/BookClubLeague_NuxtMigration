@@ -16,19 +16,5 @@ const store = useTokenStore();
 </template>
 
 <style scoped>
-.loginCon {
-  display: flex;
-  justify-content: space-evenly;
-  width: 20%;
-  right: 0;
-  margin: 1rem;
-  position: absolute;
-}
-.loginCon button {
-  background-color: var(--secondTextColor);
-  color: var(--mainTextColor);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  margin: 0 1rem;
-}
+@import "../../assets/stylesheets/components/login/login-container.css";
 </style>

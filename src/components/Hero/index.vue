@@ -10,11 +10,6 @@ defineProps({
   </div>
 </template>
 
-<style>
-.heroCon {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-  padding: 2rem 0px 0px 2rem;
-}
+<style scoped>
+@import "../../assets/stylesheets/components/hero.css";
 </style>
