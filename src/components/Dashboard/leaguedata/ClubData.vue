@@ -1,12 +1,11 @@
 <script setup lang="ts">
 defineProps<{
-    clubData: string | number
-}>()
-
+  clubData: string | number;
+}>();
 </script>
 
 <template>
-          <div>
-            <h2>{{ clubData }}</h2>
-          </div>
+  <div>
+    <h3>{{ clubData }}</h3>
+  </div>
 </template>

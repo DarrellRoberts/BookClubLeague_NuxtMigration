@@ -11,7 +11,8 @@
   grid-template-columns: repeat(5, 1fr);
   color: black;
   height: 500px;
-  width: 1200px;
+  /* width: clamp(100%, 100vw, 1200px); */
+  width: 100%;
   border-radius: 20px;
   overflow-y: scroll;
   text-align: center;

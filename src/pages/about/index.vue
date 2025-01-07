@@ -25,5 +25,5 @@ store.changeHeading("About");
 </template>
 
 <style scoped>
-@import "../../assets/stylesheets/about/about.css";
+@import "../../assets/stylesheets/components/about/about.css";
 </style>

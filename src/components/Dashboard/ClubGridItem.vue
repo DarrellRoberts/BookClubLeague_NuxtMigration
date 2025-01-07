@@ -16,7 +16,7 @@ defineProps<{
 
 <template>
   <div class="lTableGridItem">
-    <h2 class="underline" id="tableTitles">Position</h2>
+    <h3 class="underline" id="tableTitles">Position</h3>
     <ClubData
       v-for="(_, index) in leagueData"
       :clubData="index + 1"
@@ -24,7 +24,7 @@ defineProps<{
     />
   </div>
   <div class="lTableGridItem">
-    <h2 class="underline" id="tableTitles">Book Club</h2>
+    <h3 class="underline" id="tableTitles">Book Club</h3>
     <ClubData
       v-for="(item, index) in leagueData"
       :clubData="item.name"
@@ -32,7 +32,7 @@ defineProps<{
     />
   </div>
   <div class="lTableGridItem">
-    <h2 class="underline" id="tableTitles">Created in</h2>
+    <h3 class="underline" id="tableTitles">Created in</h3>
     <ClubData
       v-for="(item, index) in leagueData"
       :clubData="formatDate(item.dateFormed)"
@@ -40,7 +40,7 @@ defineProps<{
     />
   </div>
   <div class="lTableGridItem">
-    <h2 class="underline" id="tableTitles">Members</h2>
+    <h3 class="underline" id="tableTitles">Members</h3>
     <ClubData
       v-for="(item, index) in leagueData"
       :clubData="item.members.length"
@@ -48,7 +48,7 @@ defineProps<{
     />
   </div>
   <div class="lTableGridItem">
-    <h2 class="underline" id="tableTitles">Books read</h2>
+    <h3 class="underline" id="tableTitles">Books read</h3>
     <ClubData
       v-for="(item, index) in leagueData"
       :clubData="item.booksScored.length"

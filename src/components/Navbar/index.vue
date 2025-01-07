@@ -15,11 +15,9 @@ const turnFull = () => {
       <li></li>
     </ul>
   </div>
-  <div v-else ref="myDiv" class="navbarCon" @click="turnFull">
-    <h2>>>></h2>
-  </div>
+  <div v-else ref="myDiv" class="navbarCon" @click="turnFull"></div>
 </template>
 
 <style scoped>
-@import "../../assets/stylesheets/components/navbar.css";
+@import "../../assets/stylesheets/components/navbar/navbar.css";
 </style>
