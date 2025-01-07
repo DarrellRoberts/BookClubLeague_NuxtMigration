@@ -14,6 +14,10 @@ const store = useClubStore();
       </div>
     </div>
   </div>
+  <h2 class="text-center">
+    Want to enter your club into the leaderboard?
+    <NuxtLink to="/submit-club"> Click here to submit </NuxtLink>
+  </h2>
 </template>
 
 <style scoped>

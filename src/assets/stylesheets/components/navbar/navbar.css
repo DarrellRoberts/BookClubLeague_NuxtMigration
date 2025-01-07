@@ -23,6 +23,7 @@
   width: 3%;
   animation: swipeIn 0.5s cubic-bezier(0.9, 0.82, 0.165, 1) 0s 1;
   cursor: pointer;
+  z-index: 100;
 }
 .navbarFull {
   display: flex;
@@ -32,6 +33,7 @@
   width: 50%;
   animation: swipeOut 0.5s cubic-bezier(0.9, 0.82, 0.165, 1) 0s 1;
   cursor: pointer;
+  z-index: 100;
 }
 @keyframes swipeOut {
   0% {

@@ -1,0 +1,13 @@
+.club-form-container {
+  display: flex;
+  /* height: 100vh; */
+  justify-content: center;
+  text-align: center;
+}
+
+.club-form {
+  background-color: white;
+  width: 80%;
+  padding: 2rem;
+  border-radius: 30px;
+}
