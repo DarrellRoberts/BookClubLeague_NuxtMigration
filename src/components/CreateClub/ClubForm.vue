@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useForm } from "~/composables/useForm";
+import { ref } from "vue";
 
 const { formData, handleSubmit, loading, error } = useForm(
   "https://bookclubleague-backend.onrender.com/clubs",
@@ -10,6 +11,13 @@ const { formData, handleSubmit, loading, error } = useForm(
   },
   "POST"
 );
+
+const nameRules = ref([
+  (v: string) => !!v || "Name is required",
+  (v: string) =>
+    (v && v.length <= 22) || "Name must be less than 22 characters",
+  (v: string) => (v && v.length > 3) || "Name must be more than 3 characters",
+]);
 </script>
 
 <template>
@@ -18,13 +26,13 @@ const { formData, handleSubmit, loading, error } = useForm(
       <v-text-field
         v-model="formData.name"
         label="Name"
+        :rules="nameRules"
         required
       ></v-text-field>
 
       <v-text-field
-        v-model="formData.website"
+        v-model.website="formData.website"
         label="Website"
-        required
       ></v-text-field>
 
       <!-- <v-select

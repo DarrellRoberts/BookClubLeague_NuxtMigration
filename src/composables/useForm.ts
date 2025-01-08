@@ -1,7 +1,13 @@
 import { reactive, ref, type Ref } from "vue";
 import { useTokenStore } from "~/store/token";
 
-export const useForm = (url: string, form: object | null, reqType: string) => {
+type Form = {
+  name: string;
+  website: string;
+  tagline: string;
+};
+
+export const useForm = (url: string, form: Form | null, reqType: string) => {
   const loading: Ref<boolean> = ref(false);
   const error: Ref<string | null | unknown> = ref(null);
   const formData = reactive({
