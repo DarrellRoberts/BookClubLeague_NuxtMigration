@@ -1,7 +1,7 @@
 import { reactive, ref, type Ref } from "vue";
 import { useTokenStore } from "~/store/token";
 
-export const useForm = (url: string, form: object, reqType: string) => {
+export const useForm = (url: string, form: object | null, reqType: string) => {
   const loading: Ref<boolean> = ref(false);
   const error: Ref<string | null | unknown> = ref(null);
   const formData = reactive({
@@ -9,11 +9,12 @@ export const useForm = (url: string, form: object, reqType: string) => {
   });
   const store = useTokenStore();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (param: null | string) => {
+    const fetchUrl = param ? `${url}/${param}` : url;
     try {
       loading.value = true;
       error.value = null;
-      const response = await fetch(url, {
+      const response = await fetch(fetchUrl, {
         method: reqType,
         headers: {
           "Content-Type": "application/json",
@@ -25,12 +26,14 @@ export const useForm = (url: string, form: object, reqType: string) => {
       if (!response.ok) {
         loading.value = false;
         error.value = data.error;
+        console.log(data);
         console.log("something has happened");
       }
 
       if (response.ok) {
         loading.value = false;
         console.log("success");
+        location.reload();
       }
     } catch (err) {
       loading.value = false;

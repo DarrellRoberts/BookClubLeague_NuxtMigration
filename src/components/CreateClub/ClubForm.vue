@@ -50,15 +50,7 @@ const { formData, handleSubmit, loading, error } = useForm(
       ></v-text-field>
 
       <div class="d-flex flex-column">
-        <v-btn class="mt-4" color="success" block @click="validate">
-          Validate
-        </v-btn>
-
-        <v-btn class="mt-4" color="error" block @click="reset">
-          Reset Form
-        </v-btn>
-
-        <v-btn class="mt-4" color="success" block @click="handleSubmit">
+        <v-btn class="mt-4" color="success" block @click="handleSubmit(null)">
           Submit
         </v-btn>
       </div>
