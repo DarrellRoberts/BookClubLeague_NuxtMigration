@@ -8,6 +8,10 @@ const { formData, handleSubmit, loading, error } = useForm(
     name: "",
     website: "",
     tagline: "",
+    avatar: {
+      background: { image: "", color: "" },
+      figure: { image: "", color: "" },
+    },
   },
   "POST"
 );
@@ -18,6 +22,31 @@ const nameRules = ref([
     (v && v.length <= 22) || "Name must be less than 22 characters",
   (v: string) => (v && v.length > 3) || "Name must be more than 3 characters",
 ]);
+
+const backgroundShapes = [
+  "circle",
+  "teardrop",
+  "half-circle",
+  "triangle",
+  "square",
+  "pentagon",
+  "hexagon",
+  "heptagon",
+  "octagon",
+];
+
+const figureShapes = [
+  "book",
+  "eye",
+  "dice",
+  "thumb",
+  "smiley",
+  "cloud",
+  "train",
+  "shark",
+  "sun",
+  "moon",
+];
 </script>
 
 <template>
@@ -35,13 +64,31 @@ const nameRules = ref([
         label="Website"
       ></v-text-field>
 
-      <!-- <v-select
-        v-model="select"
-        :items="items"
-        :rules="[(v) => !!v || 'Item is required']"
-        label="Item"
-        required
-      ></v-select> -->
+      <v-select
+        v-model="formData.avatar.background.image"
+        :items="backgroundShapes"
+        label="Background Shape"
+      ></v-select>
+
+      <v-color-picker
+        v-model="formData.avatar.background.color"
+        label="Background Color"
+        hide-inputs
+      >
+      </v-color-picker>
+
+      <v-select
+        v-model="formData.avatar.figure.image"
+        :items="figureShapes"
+        label="Figure Shapes"
+      ></v-select>
+
+      <v-color-picker
+        v-model="formData.avatar.figure.color"
+        label="Figure Color"
+        hide-inputs
+      >
+      </v-color-picker>
 
       <!-- <v-select
         v-model="select"
