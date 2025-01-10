@@ -1,17 +1,12 @@
 import { reactive, ref, type Ref } from "vue";
 import { useTokenStore } from "~/store/token";
+import { type Club } from "~/types/Club";
 
-type Form = {
-  name: string;
-  website: string;
-  tagline: string;
-};
-
-export const useForm = (url: string, form: Form | null, reqType: string) => {
+export const useForm = (url: string, form: Club | null, reqType: string) => {
   const loading: Ref<boolean> = ref(false);
   const error: Ref<string | null | unknown> = ref(null);
   const formData = reactive({
-    form,
+    ...form,
   });
   const store = useTokenStore();
 
@@ -33,6 +28,8 @@ export const useForm = (url: string, form: Form | null, reqType: string) => {
         loading.value = false;
         error.value = data.error;
         console.log(data);
+        console.log(formData);
+        console.log(form);
         console.log("something has happened");
       }
 
