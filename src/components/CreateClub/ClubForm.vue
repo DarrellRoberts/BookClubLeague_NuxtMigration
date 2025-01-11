@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useForm } from "~/composables/useForm";
+import AvatarSvg from "./AvatarSvg.vue";
 import { ref } from "vue";
 
 const { formData, handleSubmit, loading, error } = useForm(
@@ -64,31 +65,44 @@ const figureShapes = [
         label="Website"
       ></v-text-field>
 
-      <v-select
-        v-model="formData.avatar.background.image"
-        :items="backgroundShapes"
-        label="Background Shape"
-      ></v-select>
+      <div class="avatar-container">
+        <div>
+          <div class="color-container">
+            <v-select
+              v-model="formData.avatar.background.image"
+              :items="backgroundShapes"
+              label="Background Shape"
+            ></v-select>
 
-      <v-color-picker
-        v-model="formData.avatar.background.color"
-        label="Background Color"
-        hide-inputs
-      >
-      </v-color-picker>
+            <v-color-picker
+              v-model="formData.avatar.background.color"
+              label="Background Color"
+              hide-inputs
+            >
+            </v-color-picker>
+          </div>
+          <div class="color-container">
+            <v-select
+              v-model="formData.avatar.figure.image"
+              :items="figureShapes"
+              label="Figure Shapes"
+            ></v-select>
 
-      <v-select
-        v-model="formData.avatar.figure.image"
-        :items="figureShapes"
-        label="Figure Shapes"
-      ></v-select>
-
-      <v-color-picker
-        v-model="formData.avatar.figure.color"
-        label="Figure Color"
-        hide-inputs
-      >
-      </v-color-picker>
+            <v-color-picker
+              v-model="formData.avatar.figure.color"
+              label="Figure Color"
+              hide-inputs
+            >
+            </v-color-picker>
+          </div>
+        </div>
+        <AvatarSvg
+          :background="formData.avatar?.background.image"
+          :background-color="formData.avatar?.background.color"
+          :figure="formData.avatar?.figure.image"
+          :figure-color="formData.avatar?.figure.color"
+        />
+      </div>
 
       <!-- <v-select
         v-model="select"

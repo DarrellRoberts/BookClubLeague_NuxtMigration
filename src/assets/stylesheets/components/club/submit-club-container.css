@@ -11,3 +11,18 @@
   padding: 2rem;
   border-radius: 30px;
 }
+
+.avatar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.svgContainer {
+  display: flex;
+  align-self: center;
+}
