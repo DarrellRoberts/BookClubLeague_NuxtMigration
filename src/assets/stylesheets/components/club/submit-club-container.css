@@ -22,7 +22,16 @@
   flex-direction: column;
 }
 
-.svgContainer {
+.avatarSVG {
   display: flex;
-  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.figureSVG {
+  position: absolute;
+  /* right: 50%; */
+  transform: translateY(0%) translateX(0%);
+  width: inherit;
 }

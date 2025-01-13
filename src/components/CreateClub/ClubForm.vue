@@ -2,6 +2,7 @@
 import { useForm } from "~/composables/useForm";
 import AvatarSvg from "./AvatarSvg.vue";
 import { ref } from "vue";
+import FigureSvg from "./FigureSvg.vue";
 
 const { formData, handleSubmit, loading, error } = useForm(
   "https://bookclubleague-backend.onrender.com/clubs",
@@ -96,12 +97,20 @@ const figureShapes = [
             </v-color-picker>
           </div>
         </div>
-        <AvatarSvg
-          :background="formData.avatar?.background.image"
-          :background-color="formData.avatar?.background.color"
-          :figure="formData.avatar?.figure.image"
-          :figure-color="formData.avatar?.figure.color"
-        />
+        <div class="avatarSVG">
+          <h2>{{ formData.name }}</h2>
+          <AvatarSvg
+            :background="formData.avatar?.background.image"
+            :background-color="formData.avatar?.background.color"
+          />
+          <div class="figureSVG">
+            <FigureSvg
+              :figure="formData.avatar?.figure.image"
+              :figure-color="formData.avatar?.figure.color"
+            />
+          </div>
+          <h2>{{ formData.tagline }}</h2>
+        </div>
       </div>
 
       <!-- <v-select
