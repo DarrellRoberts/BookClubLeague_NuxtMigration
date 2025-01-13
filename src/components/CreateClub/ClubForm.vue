@@ -98,6 +98,7 @@ const figureShapes = [
           </div>
         </div>
         <div class="avatarSVG">
+          <h2>{{ formData.name }}</h2>
           <AvatarSvg
             :background="formData.avatar?.background.image"
             :background-color="formData.avatar?.background.color"
@@ -108,6 +109,7 @@ const figureShapes = [
               :figure-color="formData.avatar?.figure.color"
             />
           </div>
+          <h2>{{ formData.tagline }}</h2>
         </div>
       </div>
 

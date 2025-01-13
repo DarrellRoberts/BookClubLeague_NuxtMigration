@@ -12,7 +12,7 @@ const strokewidth: Ref<string> = shallowRef("15");
   <svg
     width="200"
     height="200"
-    viewBox="-50 350 1800 500"
+    viewBox="-50 250 1800 500"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
