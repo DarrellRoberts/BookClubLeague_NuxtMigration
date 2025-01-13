@@ -22,7 +22,13 @@
   flex-direction: column;
 }
 
-.svgContainer {
+.avatarSVG {
   display: flex;
-  align-self: center;
+}
+
+.figureSVG {
+  position: absolute;
+  /* right: 50%; */
+  transform: translateY(50%) translateX(50%);
+  width: inherit;
 }
