@@ -12,3 +12,11 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.emblem {
+  transform: scale(0.5);
+}
+
+.emblem h2 {
+  font-size: 1rem;
+}
