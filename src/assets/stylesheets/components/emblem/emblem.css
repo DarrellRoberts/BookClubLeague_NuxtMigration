@@ -1,0 +1,7 @@
+.avatarSVG h2 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.avatar-wrapper {
+  transform: scale(0.5);
+}

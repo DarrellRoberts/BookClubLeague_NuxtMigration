@@ -54,9 +54,10 @@ const deleteClub = (clubId: string) => {
   </div>
   <div class="lTableGridItem">
     <h3 class="underline" id="tableTitles">Book Club</h3>
-    <ClubData
+    <Emblem
+      class="emblem"
+      :formData="item"
       v-for="(item, index) in leagueData"
-      :clubData="item.name"
       :key="index"
     />
   </div>
